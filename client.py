@@ -15,7 +15,7 @@ def connect_to_server():
     while True:
         try:
             client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            client.connect(('localhost', 8080)) # ---- Підключення до сервера
+            client.connect(('2.tcp.eu.ngrok.io', 15019)) # ---- Підключення до сервера
             buffer = ""
             game_state = {}
             my_id = int(client.recv(24).decode())
@@ -42,11 +42,11 @@ def receive():
 font_win = font.Font(None, 72)
 font_main = font.Font(None, 36)
 # --- ЗОБРАЖЕННЯ ----
-game_bg = transform.scale(image.load("image/11.jpg"), (WIDTH, HEIGHT))
+game_bg = transform.scale(image.load("image/img_1.png"), (WIDTH, HEIGHT))
 
 countdown_bg = transform.scale(image.load("image/fon.jpg"), (WIDTH, HEIGHT))
 
-winner_bg = transform.scale(image.load("image/img.png"), (WIDTH, HEIGHT))
+winner_bg = transform.scale(image.load("image/img_2.png"), (WIDTH, HEIGHT))
 ball_img = transform.scale(image.load("image/22.png"), (20, 20))
 
 # --- ЗВУКИ ---
